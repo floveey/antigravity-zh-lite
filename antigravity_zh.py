@@ -2057,14 +2057,19 @@ def main():
         print("[error] --restore and --update cannot be combined")
         return 2
 
-    if not os.path.isdir(args.dist):
-        print(f"[error] dist directory not found: {args.dist}")
-        print("        Pass --dist, or run --update once Antigravity is installed.")
-        return 2
-
     if args.update:
         if not refresh_app(args.dist, args.dry_run):
             return 1
+        if not os.path.isdir(args.dist):
+            if args.dry_run:
+                print("[dry-run] dist does not exist yet; extraction would create it.")
+                return 0
+            print(f"[error] dist directory not found after update: {args.dist}")
+            return 2
+    elif not os.path.isdir(args.dist):
+        print(f"[error] dist directory not found: {args.dist}")
+        print("        Pass --dist, or run --update once Antigravity is installed.")
+        return 2
     elif not args.restore:
         asar = os.path.join(os.path.dirname(os.path.dirname(args.dist)), "app.asar")
         if os.path.isfile(asar):

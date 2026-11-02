@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+ui/
+upstream/
+backup_before_zh/
+test_res/

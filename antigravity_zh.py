@@ -335,6 +335,7 @@ DOM_JS = r"""
     "Create a Plugin with the Agent": "使用智能体创建插件",
     "Create a new workspace from your first message.": "从第一条消息创建新工作区。",
     "Create a project first.": "请先创建项目。",
+    "Create with Prompt": "用提示词创建",
     "Created": "已创建",
     "Created Date": "创建日期",
     "Creating Chat Bot": "正在创建对话机器人",
@@ -354,9 +355,11 @@ DOM_JS = r"""
     "Custom Agents": "自定义智能体",
     "Custom View": "自定义视图",
     "Custom agents are not available in Best of N mode.": "自定义智能体在 Best of N 模式下不可用。",
+    "Custom...": "自定义...",
     "Customizations": "自定义",
     "Customize": "自定义",
     "Customize Global Skills": "自定义全局技能",
+    "Custom…": "自定义…",
     "Daily": "每天",
     "Danger Zone": "危险区域",
     "Dark": "深色",
@@ -459,6 +462,10 @@ DOM_JS = r"""
     "Error fetching MCP prompt": "获取 MCP 提示词出错",
     "Error occurred during import.": "导入时出错。",
     "Every command requires approval.": "每条命令都需要批准。",
+    "Every day": "每天",
+    "Every hour": "每小时",
+    "Every week": "每周",
+    "Every weekday": "每个工作日",
     "Execute URLs": "URL 执行",
     "Executed": "已执行",
     "Execution": "执行",
@@ -620,6 +627,7 @@ DOM_JS = r"""
     "Installed": "已安装",
     "Installed MCP Servers": "已安装的 MCP 服务器",
     "Installed Skills": "已安装技能",
+    "Instructions": "指令",
     "Insufficient AI Credits": "AI 积分不足",
     "Interrupt the agent and send immediately.": "中断智能体并立即发送。",
     "Invalid Media": "无效媒体",
@@ -768,6 +776,7 @@ DOM_JS = r"""
     "No active terminals": "无活动终端",
     "No artifacts": "暂无产物",
     "No artifacts generated": "暂无生成的产物",
+    "No automations yet": "暂无自动化",
     "No background tasks": "无后台任务",
     "No changes to review": "无可审阅的更改",
     "No conversations yet": "暂无对话",
@@ -958,6 +967,7 @@ DOM_JS = r"""
     "Rules": "规则",
     "Run": "运行",
     "Run (unsandboxed)": "运行 (非沙盒)",
+    "Run a prompt on a schedule, like a morning summary of yesterday's changes. Runs show up here.": "按计划运行提示词，例如每天早上汇总昨天的变更。运行记录会显示在这里。",
     "Run all commands without restrictions.": "无限制地运行所有命令。",
     "Run command": "运行命令",
     "Run in a new worktree": "在新的工作树中运行",
@@ -1136,6 +1146,7 @@ DOM_JS = r"""
     "This action cannot be undone": "此操作无法撤销",
     "This action cannot be undone.": "此操作无法撤销。",
     "This command ran in the sandbox.": "此命令在沙盒中运行。",
+    "This computer": "此计算机",
     "This migration may mess up your settings, chats, and sidebar.": "此迁移可能会打乱您的设置、对话和侧边栏。",
     "This month": "本月",
     "This prompt is straightforward and does not need alternative comparisons.": "此提示词很直接，不需要多模型候选对比。",
@@ -1172,6 +1183,7 @@ DOM_JS = r"""
     "Tools": "工具",
     "Trajectory Debug View": "运行轨迹调试视图",
     "Trajectory ID": "轨迹 ID",
+    "Trigger": "触发器",
     "Trigger multiple response variants from the same prompt.": "从同一提示触发多个回答变体。",
     "True changes vs the parent workspace": "相对于父工作区的实际变更",
     "Try Remote Control": "尝试远程控制",
@@ -1193,6 +1205,7 @@ DOM_JS = r"""
     "Undo changes up to this point": "撤销更改至此处",
     "Undo restores your entire workspace to its state at this point.": "撤销会将整个工作区恢复到此时的状态。",
     "Unstage change": "取消暂存更改",
+    "Untitled": "未命名",
     "Untracked (Unstaged)": "未跟踪 (未暂存)",
     "Up to date": "已是最新版本",
     "Update": "更新",
@@ -1216,6 +1229,7 @@ DOM_JS = r"""
     "Useful for typical development with an emphasis on security. It prioritizes safety over speed by requiring manual approval for all terminal commands and files outside the project directory.": "适用于注重安全的典型开发场景。它将安全性置于速度之上，要求对所有终端命令和项目目录之外的文件访问进行手动批准。",
     "User Type": "用户类型",
     "User cancelled agent execution.": "用户取消了智能体执行。",
+    "Uses your local files and tools. Schedules only.": "使用本地文件和工具，仅按计划运行。",
     "Using the Antigravity Python SDK to build AI agents": "使用 Antigravity Python SDK 构建 AI 智能体",
     "Validation timed out.": "验证超时。",
     "Verbose": "详细",
@@ -1240,6 +1254,7 @@ DOM_JS = r"""
     "Weekly Limit": "每周限额",
     "Weekly Limit Remaining": "每周限额剩余",
     "Welcome to Cider with Jetski": "欢迎使用配备智能助手的编辑器",
+    "What should the agent do on each run? For example: summarize new bugs assigned to me and anything that changed overnight.": "智能体每次运行时应做什么？例如：汇总分配给我的新 Bug 以及夜间发生的变更。",
     "When disabled, you can check for updates manually from the app menu.": "禁用后，您可以从应用菜单手动检查更新。",
     "When enabled, the agent will include default customizations, including default skills.": "启用后，智能体将包含默认自定义项（包括默认技能）。",
     "When toggled on, Antigravity collects usage data to help Google enhance performance and features.": "开启后，Antigravity 将收集使用数据，以帮助 Google 提升性能和功能。",
@@ -1294,6 +1309,7 @@ DOM_JS = r"""
     "and select": "并选择",
     "application": "应用",
     "ask": "询问",
+    "at": "于",
     "branch": "分支",
     "branches": "分支",
     "cancel": "取消",
@@ -1806,6 +1822,15 @@ DOM_JS = r"""
 
   var ATTRS = ["title", "placeholder", "aria-label", "data-tooltip", "alt", "value"];
 
+  var EMPTY_STATES = {
+    "No automations yet": "暂无自动化",
+    "否 automations yet": "暂无自动化",
+    "No projects yet": "暂无项目",
+    "否 projects yet": "暂无项目",
+    "No conversations yet": "暂无对话",
+    "否 conversations yet": "暂无对话"
+  };
+
   function translateAttrs(el) {
     if (!el || !el.getAttribute) return;
     for (var i = 0; i < ATTRS.length; i++) {
@@ -1824,7 +1849,15 @@ DOM_JS = r"""
   function processNode(node) {
     if (!node) return;
     if (node.nodeType === Node.TEXT_NODE) {
-      if (isProtected(node.parentElement)) return;
+      var parent = node.parentElement;
+      if (parent) {
+        var full = (parent.textContent || "").replace(/\s+/g, " ").trim();
+        if (EMPTY_STATES[full]) {
+          parent.textContent = EMPTY_STATES[full];
+          return;
+        }
+      }
+      if (isProtected(parent)) return;
       var original = node.textContent;
       var translated = translateText(original);
       if (translated !== original) node.textContent = translated;

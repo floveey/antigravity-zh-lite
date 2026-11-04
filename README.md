@@ -21,8 +21,8 @@ Google Antigravity 桌面端的轻量中文翻译层。纯 Python 标准库，�
 
 - Windows 10/11 x64
 - Python 3.8+
-- Antigravity 安装在默认路径：`%LOCALAPPDATA%\Programs\antigravity`
-- 非默认安装路径可用 `--dist` 指定
+- 自动检测安装目录：默认路径 → 注册表卸载项 → `Program Files` 常见路径
+- 检测不到时可用 `--dist` 指定；`--print-dist` 可查看检测结果
 
 ## 快速开始
 
@@ -68,6 +68,7 @@ python antigravity_zh.py --update
 | `--restore` | 只移除翻译块 |
 | `--dry-run` | 只显示将要执行的操作 |
 | `--dist PATH` | 指定 `resources/app/dist` 路径 |
+| `--print-dist` | 打印自动检测到的路径并退出 |
 
 ### restore_official.py
 
@@ -76,6 +77,7 @@ python antigravity_zh.py --update
 | 无参数 | 恢复官方 `app.asar` 并删除解包目录 |
 | `--dry-run` | 只显示将要执行的操作 |
 | `--dist PATH` | 指定 `resources/app/dist` 路径 |
+| `--print-dist` | 打印自动检测到的路径并退出 |
 
 ## 工作原理
 

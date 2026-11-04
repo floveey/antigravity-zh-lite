@@ -35,6 +35,8 @@ DOM_JS = r"""
     "+ Add folder": "+ 添加文件夹",
     "+ New Conversation": "+ 新建对话",
     "A Google Cloud project is required to use Antigravity.": "使用 Antigravity 需要 Google Cloud 项目。",
+    "A copy of the workspace snapshot recorded at this step.": "此步骤记录的工作区快照副本。",
+    "A full copy of this workspace, uncommitted changes included.": "此工作区的完整副本，包含未提交的更改。",
     "A label for this computer when you connect from another device. Changing it reconnects.": "当从其他设备连接时用于标识此计算机的标签。更改该标签将重新连接。",
     "A license or project selection is required to use Antigravity.": "使用 Antigravity 需要许可证或项目选择。",
     "A shell setup script run before every command the agent executes.": "在智能体执行每条命令前运行的 Shell 初始化脚本。",
@@ -81,6 +83,7 @@ DOM_JS = r"""
     "Agent Settings": "智能体设置",
     "Agent always asks for review.": "智能体始终请求审阅。",
     "Agent can scroll on browser pages to access more content.": "智能体可以滚动浏览器页面以访问更多内容。",
+    "Agent encountered an internal error.": "智能体遇到内部错误。",
     "Agent execution terminated due to error": "智能体执行因错误而终止",
     "Agent execution terminated due to error.": "智能体执行因错误而终止。",
     "Agent is thinking...": "智能体正在思考...",
@@ -136,6 +139,7 @@ DOM_JS = r"""
     "Apply": "应用",
     "Archive": "归档",
     "Archive Conversation": "归档对话",
+    "Archive This Conversation": "归档此对话",
     "Archive Workspace": "归档工作区",
     "Archive project": "归档项目",
     "Are you sure you want to delete": "您确定要删除",
@@ -191,6 +195,7 @@ DOM_JS = r"""
     "Browser Settings": "浏览器设置",
     "Browser Subagent": "浏览器子智能体",
     "Browser User Profile Path": "浏览器用户配置文件路径",
+    "Browsing History": "浏览历史",
     "Bug Report": "错误报告",
     "Build With Google Plugins": "使用 Google 插件构建",
     "Build with Antigravity Plugins": "使用 Antigravity 插件构建",
@@ -202,7 +207,9 @@ DOM_JS = r"""
     "Cancel": "取消",
     "Cancel All Tasks": "取消所有任务",
     "Cannot parse folder URI.": "无法解析文件夹 URI。",
+    "Change...": "更改...",
     "Changes": "更改",
+    "Change…": "更改…",
     "Chat": "对话",
     "Chat Settings": "聊天设置",
     "Chat Shortcuts": "对话快捷键",
@@ -210,13 +217,16 @@ DOM_JS = r"""
     "Check for update": "检查更新",
     "Choose a predefined security preset for the agent. This controls terminal auto-execution policy, and file access policy.": "为智能体选择一个预定义的安全预设。这将控制终端自动执行策略和文件访问策略。",
     "Choose between the Default and Project 4K experience.": "在默认体验和 Project 4K 体验之间选择。",
+    "Choose how much detail is shown during a conversation.": "选择对话过程中显示多少细节。",
     "Choose the experience that fits how you work.": "选择适合您工作方式的体验。",
     "Choose where links open by default when clicked.": "选择点击链接时的默认打开位置。",
+    "Choose where terminal sessions appear.": "选择终端会话的显示位置。",
     "Chrome Binary Path": "Chrome 可执行文件路径",
     "Chrome DevTools": "Chrome 开发者工具",
     "Claude and GPT models": "Claude 和 GPT 模型",
     "Clear": "清除",
     "Clear History": "清除历史记录",
+    "Clear visited URLs and autocomplete suggestions from the built-in browser.": "清除内置浏览器的访问记录和自动补全建议。",
     "Click to copy URL": "点击复制 URL",
     "Click to respond to the question.": "点击以回答问题。",
     "Click to respond to the questions.": "点击以回答问题。",
@@ -239,6 +249,7 @@ DOM_JS = r"""
     "Command Setup Script": "命令设置脚本",
     "Commands": "命令",
     "Commands Outside Sandbox": "沙盒外命令",
+    "Commands and files these agents can use.": "这些智能体可使用的命令和文件。",
     "Commit": "提交",
     "Commit succeeded": "提交成功",
     "Complete Onboarding Step": "完成新手入门引导步骤",
@@ -265,6 +276,7 @@ DOM_JS = r"""
     "Configure the browser subagent. It requires": "配置浏览器子智能体。需要安装",
     "Configure the default width of markdown artifacts.": "配置 Markdown 工件的默认宽度。",
     "Configure the maximum width of the conversation panel.": "配置对话面板的最大宽度。",
+    "Configure what the agent can do in local and remote conversations.": "配置智能体在本地和远程对话中可执行的操作。",
     "Configure when follow-up messages are sent.": "配置发送后续消息的时机。",
     "Configure workspace-specific permissions, resources, and customizations.": "配置特定工作区的权限、资源及自定义项。",
     "Configures how the agent tries to access files outside of its working folders.": "配置智能体如何尝试访问工作文件夹以外的文件。",
@@ -275,6 +287,7 @@ DOM_JS = r"""
     "Confirming this undo action will make the following changes:": "确认此撤销操作将做出以下更改：",
     "Confirming this undo action will not make any code changes.": "确认此撤销操作不会做出任何代码更改。",
     "Connect": "连接",
+    "Connect an account so the agent can run automations.": "连接账户，以便智能体运行自动化。",
     "Connecting to language server...": "正在连接语言服务器...",
     "Context": "上下文",
     "Continue Response": "继续回答",
@@ -289,6 +302,7 @@ DOM_JS = r"""
     "Conversation History": "历史对话",
     "Conversation ID": "对话 ID",
     "Conversation Name": "对话名称",
+    "Conversation Steps": "对话步骤",
     "Conversation Width": "对话宽度",
     "Conversation copied as Markdown to clipboard": "对话已作为 Markdown 复制到剪贴板",
     "Conversation unavailable": "对话不可用",
@@ -319,11 +333,17 @@ DOM_JS = r"""
     "Create New Project": "创建新项目",
     "Create Project": "创建项目",
     "Create a Plugin with the Agent": "使用智能体创建插件",
+    "Create a new workspace from your first message.": "从第一条消息创建新工作区。",
+    "Create a project first.": "请先创建项目。",
     "Created": "已创建",
     "Created Date": "创建日期",
     "Creating Chat Bot": "正在创建对话机器人",
     "Creating Cloud Project": "正在创建云项目",
+    "Creating Fork...": "正在创建分叉...",
     "Creating Sidecar": "正在创建 Sidecar",
+    "Creating the forked conversation...": "正在创建分叉对话...",
+    "Creating workspace for the forked conversation...": "正在为分叉对话创建工作区...",
+    "Creating worktree for the forked conversation...": "正在为分叉对话创建工作树...",
     "Creation Date": "创建日期",
     "Curated collection of agent skills for science.": "精选的科学领域智能体技能集合。",
     "Curated sets of plugins for common workflows and roles.": "为常见工作流和角色精选的插件集合。",
@@ -360,6 +380,7 @@ DOM_JS = r"""
     "Delete Project": "删除项目",
     "Delete Task": "删除任务",
     "Delete Terminal": "删除终端",
+    "Delete all recordings?": "删除所有录音？",
     "Delete comment": "删除评论",
     "Deleted": "已删除",
     "Deny": "拒绝",
@@ -389,6 +410,7 @@ DOM_JS = r"""
     "Don't show this for 2 days": "两天内不再显示",
     "Download": "下载",
     "Download Diagnostics": "下载诊断数据",
+    "Download Location": "下载位置",
     "Download feature is not available.": "下载功能不可用。",
     "Downloading": "下载中...",
     "Drag to resize, double-click to reset": "拖拽调整大小，双击重置",
@@ -471,6 +493,7 @@ DOM_JS = r"""
     "Failed to load plugins. Please try again.": "加载插件失败，请重试。",
     "Failed to proceed": "继续失败",
     "Failed to rename conversation": "重命名对话失败",
+    "Failed to resolve permissions. Please try again.": "解析权限失败，请重试。",
     "Failed to save project": "保存项目失败",
     "Failed to start Best of N mode": "启动 Best of N 模式失败",
     "Failed to start conversation": "开启对话失败",
@@ -478,6 +501,7 @@ DOM_JS = r"""
     "Failed to stop conversation": "停止对话失败",
     "Failed to toggle plugin. Please try again.": "切换插件失败，请重试。",
     "Failed to unarchive project": "取消归档项目失败",
+    "Failed to update permissions. Please try again.": "更新权限失败，请重试。",
     "Fast": "快速",
     "Feature Request": "功能请求",
     "Features": "功能",
@@ -506,7 +530,10 @@ DOM_JS = r"""
     "Five Hour Limit Remaining": "五小时限额剩余",
     "Focus Input": "聚焦输入框",
     "Folder": "文件夹",
+    "Folder where files downloaded in the built-in browser are saved.": "内置浏览器下载文件保存的文件夹。",
     "Folders": "文件夹",
+    "Folders these agents can access.": "这些智能体可访问的文件夹。",
+    "Font": "字体",
     "Font Size": "字体大小",
     "For any feedback that does not fit into the above categories.": "适用于不属于上述类别的任何反馈。",
     "Foreground": "前景颜色",
@@ -527,6 +554,7 @@ DOM_JS = r"""
     "GitHub Permissions": "GitHub 权限",
     "GitHub Personal Access Token": "GitHub 个人访问令牌",
     "GitHub Policies": "GitHub 策略",
+    "Give Feedback": "提供反馈",
     "Global Permissions": "全局权限",
     "Global Shortcut": "全局快捷键",
     "Global Shortcuts": "全局快捷键",
@@ -565,6 +593,7 @@ DOM_JS = r"""
     "Host Environment": "主机环境",
     "Hourly": "每小时",
     "How can we improve?": "我们该如何改进？",
+    "How loud Antigravity's voice is.": "Antigravity 语音的音量。",
     "How loud Jetski's voice is.": "Jetski 的音量。",
     "I prefer an immediate single response to prioritize productivity right now.": "我希望立即得到单次回复以提高当前的效率。",
     "Import": "导入",
@@ -585,6 +614,7 @@ DOM_JS = r"""
     "Inherits your Global Permissions when working in this project.": "在此项目中工作时继承您的全局权限。",
     "Inline Actions": "行内操作",
     "Inline Widget": "行内小部件",
+    "Input device for voice mode and dictation.": "语音模式和听写使用的输入设备。",
     "Input device for voice mode.": "语音模式的输入设备。",
     "Input required": "需要输入",
     "Installed": "已安装",
@@ -600,6 +630,7 @@ DOM_JS = r"""
     "Keep In Menu Bar": "保留在系统托盘",
     "Keep the app accessible from the menu bar and running in the background when all windows are closed.": "应用将可以从系统托盘访问，并在所有窗口关闭时继续在后台运行。",
     "Keep your coding agent up to date with the latest web best practices.": "让您的编程智能体掌握最新的 Web 最佳实践。",
+    "Keeps working in this workspace. Nothing is copied.": "继续在此工作区中工作，不复制任何内容。",
     "Keybindings": "快捷键绑定",
     "Keyboard Shortcuts": "键盘快捷键",
     "Keyboard shortcuts": "键盘快捷键",
@@ -681,6 +712,7 @@ DOM_JS = r"""
     "Mention Page": "提及页面",
     "Mentions": "提及",
     "Message input": "消息输入框",
+    "Microphone": "麦克风",
     "Microphone blocked. Allow mic access.": "麦克风被阻止，请允许麦克风访问。",
     "Minimize": "最小化",
     "Minimize Pane": "最小化面板",
@@ -699,6 +731,8 @@ DOM_JS = r"""
     "Monthly Limit": "每月限额",
     "More Actions": "更多操作",
     "More actions": "更多操作",
+    "Move Conversation Down": "下移对话",
+    "Move Conversation Up": "上移对话",
     "Move to Group": "移动到分组",
     "NAVIGATION": "导航",
     "Narrow": "较窄",
@@ -712,6 +746,7 @@ DOM_JS = r"""
     "New Conversation": "新建对话",
     "New Group": "新建分组",
     "New Project": "新建项目",
+    "New Tab": "新建标签页",
     "New Terminal": "新建终端",
     "New Terminal Tab": "新建终端标签页",
     "New Workspace": "新建工作区",
@@ -720,6 +755,7 @@ DOM_JS = r"""
     "New hook name": "新钩子名称",
     "Next Aux Pane Tab": "下一个辅助面板标签",
     "Next Pane Tab": "下一个面板标签",
+    "Next Side Panel Tab": "下一个侧边栏标签",
     "Next question": "下一个问题",
     "No (tell the agent what to do instead)": "否 (告诉智能体改做什么)",
     "No MCP Servers": "无 MCP 服务器",
@@ -764,6 +800,8 @@ DOM_JS = r"""
     "Notifications": "通知",
     "Now that you've created a project, configure your project's agent settings or start a conversation.": "现在您已经创建了一个项目，接下来请配置该项目的智能体设置，或者直接开始对话。",
     "OK": "确定",
+    "Only stored on your machine.": "仅存储在本机。",
+    "Only the conversation will be rewound; your files will be left as-is.": "仅回退对话，文件保持不变。",
     "Open Antigravity IDE": "打开 Antigravity IDE",
     "Open Command Palette": "打开命令面板",
     "Open Commit Graph": "打开提交图谱",
@@ -791,6 +829,7 @@ DOM_JS = r"""
     "Open project settings": "打开项目设置",
     "Open side-by-side view": "打开并排视图",
     "Operating System": "操作系统",
+    "Optimize the interface and terminal output for screen readers.": "为屏幕阅读器优化界面和终端输出。",
     "Options": "选项",
     "Organization Allowed Domains (Read-Only)": "组织允许的域名 (只读)",
     "Other (write your answer)": "其他 (填写您的回答)",
@@ -802,6 +841,7 @@ DOM_JS = r"""
     "Parent conversation ID is required to fork.": "分叉需要父对话 ID。",
     "Paste auth code": "粘贴认证代码",
     "Paste code here": "在此粘贴代码",
+    "Pay only for the tokens you use, billed through Gemini platform.": "仅为使用的 Token 付费，通过 Gemini 平台计费。",
     "Permanently delete": "永久删除",
     "Permission Preset": "权限预设",
     "Permission Settings": "权限设置",
@@ -813,6 +853,7 @@ DOM_JS = r"""
     "Planning...": "计划中...",
     "Play a sound when your action is needed or the agent finishes.": "需要您操作或智能体完成时播放声音。",
     "Please describe the issue in detail. The more actionable your feedback, the quicker our team can address your request. Some helpful information includes:": "请详细描述您的问题。您的反馈越具体，我们的团队就能越快处理您的请求。一些有用的信息包括：",
+    "Please fill out all required values to continue.": "请填写所有必填值以继续。",
     "Please list the steps to reproduce the issue": "请列出重现问题的步骤",
     "Please list the steps to reproduce the issue...": "请列出重现问题的步骤...",
     "Please provide a more detailed description (at least 10 characters).": "请提供更详细的描述（至少 10 个字符）。",
@@ -826,8 +867,10 @@ DOM_JS = r"""
     "Press desired key combination": "按下所需的组合键",
     "Prevent Sleep": "阻止睡眠",
     "Prevent the computer from sleeping while the app is running.": "在应用运行时阻止计算机进入睡眠状态。",
+    "Preview is not available for this file type.": "此文件类型不支持预览。",
     "Previous Aux Pane Tab": "上一个辅助面板标签",
     "Previous Pane Tab": "上一个面板标签",
+    "Previous Side Panel Tab": "上一个侧边栏标签",
     "Previous question": "上一个问题",
     "Privacy": "隐私",
     "Proceed with Plan": "继续执行计划",
@@ -872,6 +915,7 @@ DOM_JS = r"""
     "Refresh quota and credits data": "刷新配额和积分数据",
     "Refreshed credentials for all automations.": "已刷新所有自动化的凭据。",
     "Refreshing": "刷新中",
+    "Refreshing credentials...": "正在刷新凭据...",
     "Refreshing...": "刷新中...",
     "Regroup Google3 Chats": "重新对对话进行分组",
     "Reject Step": "拒绝步骤",
@@ -888,7 +932,9 @@ DOM_JS = r"""
     "Renamed": "已重命名",
     "Render display math flush left.": "块级公式左对齐渲染。",
     "Render display math in leqno style (left-justified tags).": "使用 leqno 风格 (编号左对齐) 渲染块级公式。",
+    "Reopen Closed Tab": "重新打开已关闭的标签页",
     "Replace With New": "替换为新建",
+    "Replace the default browser right-click menu with quick actions.": "用快捷操作替换浏览器默认右键菜单。",
     "Replace with New": "替换为新建",
     "Replace with new": "替换为新建",
     "Request Review": "请求审阅",
@@ -904,6 +950,7 @@ DOM_JS = r"""
     "Restore Pane": "还原面板",
     "Restore defaults": "恢复默认设置",
     "Restricts agent tools to a secure, isolated local sandbox.": "将智能体工具限制在安全隔离的本地沙盒中。",
+    "Reuse your last workspace.": "复用上次使用的工作区。",
     "Reveal in Finder": "在访达中显示",
     "Review": "审阅",
     "Review Policy": "审阅策略",
@@ -937,11 +984,15 @@ DOM_JS = r"""
     "Search GoB repositories...": "搜索代码仓库...",
     "Search MCP servers by name": "按名称搜索 MCP 服务器",
     "Search across files...": "跨文件搜索...",
+    "Search conversations, commands, and code...": "搜索对话、命令和代码...",
     "Search conversations...": "搜索对话...",
     "Search customizations...": "搜索自定义项...",
+    "Search file contents...": "搜索文件内容...",
+    "Search files...": "搜索文件...",
     "Search flags": "搜索功能开关",
     "Search for commands...": "搜索命令...",
     "Search for conversations...": "搜索对话...",
+    "Search for files in the project...": "在项目中搜索文件...",
     "Search projects": "搜索项目",
     "Search projects...": "搜索项目...",
     "Search shortcuts...": "搜索快捷键...",
@@ -964,12 +1015,14 @@ DOM_JS = r"""
     "Select a workspace to save agent scripts to your workspace.": "选择一个工作区以将智能体脚本保存到您的工作区。",
     "Select another model": "选择其他模型",
     "Select branch": "选择分支",
+    "Select category to search...": "选择要搜索的类别...",
     "Select light, dark, or inherit system settings.": "选择浅色、深色，或跟随系统设置。",
     "Select model": "选择模型",
     "Select your license": "选择您的许可证",
     "Send Feedback": "发送反馈",
     "Send Immediately": "立即发送",
     "Send Now": "立即发送",
+    "Send command input?": "发送命令输入？",
     "Send message": "发送消息",
     "Send message Enter": "发送消息 Enter",
     "Set the volume of agent sounds.": "设置智能体音效的音量。",
@@ -980,6 +1033,7 @@ DOM_JS = r"""
     "Share Conversation (Preview)": "分享对话 (预览版)",
     "Shortcut": "快捷键",
     "Shortcuts": "快捷键",
+    "Show All": "显示全部",
     "Show in File Explorer": "在文件资源管理器中显示",
     "Show more results": "显示更多结果",
     "Show system notifications when your action is needed or the agent finishes.": "当需要您操作或智能体完成时显示系统通知。",
@@ -1016,6 +1070,7 @@ DOM_JS = r"""
     "Start Voice Recording": "开始语音录制",
     "Start first conversation": "开始首次对话",
     "Start using Gemini 3.8 Flash, our best Flash model.": "开始使用 Gemini 3.8 Flash，我们最强大的 Flash 模型。",
+    "Start without a workspace, for general questions.": "不选择工作区，直接进行一般性提问。",
     "Starting": "启动中",
     "Startup": "启动",
     "Status": "状态",
@@ -1042,6 +1097,7 @@ DOM_JS = r"""
     "System": "系统",
     "System Default": "跟随系统",
     "System Prompt": "系统提示词",
+    "System default": "系统默认",
     "Table options": "表格选项",
     "Tasks": "任务",
     "Team of subagents to do long running work": "由子智能体团队执行长时间运行的工作",
@@ -1056,15 +1112,23 @@ DOM_JS = r"""
     "Terms": "条款",
     "Terms of Service": "服务条款",
     "Thank you! Your feedback has been submitted successfully.": "谢谢！您的反馈已成功提交。",
+    "Thanks for your feedback!": "感谢您的反馈！",
+    "The agent always asks for review.": "智能体始终请求审阅。",
     "The agent asks for permission before executing commands matched by a deny list entry.": "智能体在执行匹配拒绝列表的命令前会请求许可。",
     "The agent auto-executes commands matched by an allow list entry.": "智能体自动执行匹配允许列表的命令。",
+    "The agent has encountered an internal error.": "智能体遇到内部错误。",
     "The agent is waiting for your input.": "智能体正在等待您的输入。",
     "The app will be accessible from the menu bar and will keep running in the background when all windows are closed.": "应用将可以从系统托盘访问，并在所有窗口关闭时继续在后台运行。",
     "The breakdown below shows token usage from customizations like rules, skills, and MCP. If a budget is exceeded, large rules are demoted to path pointers and large customizations are excluded automatically.": "下方的明细展示了来自规则、技能和 MCP 等自定义项的 Token 使用情况。如果超出预算，大型规则将降级为路径指针，大型自定义项将被自动排除。",
     "The breakdown below shows token usage from customizations like skills, rules, and MCP. If the budget is exceeded, large customizations will be truncated automatically.": "下方的明细展示了来自技能、规则和 MCP 等自定义项的 Token 使用情况。如果超出预算，大型规则将降级为路径指针，大型自定义项将被自动排除。",
+    "The conversation could not be loaded because its data was not found.": "无法加载对话，因为未找到其数据。",
+    "The conversation was compacted to fit within the context window.": "对话已压缩以适配上下文窗口。",
+    "The conversation was compacted while generating this response.": "生成此回复时对话已被压缩。",
     "The current trigger rate is too high.": "当前触发频率过高。",
     "The full developer experience.": "完整的开发者体验。",
+    "The server returned no conversation to fork into.": "服务器未返回可分叉的对话。",
     "The voice Jetski speaks with.": "Jetski 使用的语音。",
+    "The voice used in Voice mode. Powered by Gemini Live.": "语音模式使用的语音，由 Gemini Live 提供。",
     "Theme": "主题",
     "There are no customizations enabled": "当前未启用任何自定义项",
     "There are no customizations enabled.": "当前未启用任何自定义项。",
@@ -1090,9 +1154,11 @@ DOM_JS = r"""
     "Toggle Environment Selector": "切换环境选择器",
     "Toggle File Viewer": "切换文件查看器",
     "Toggle Maximize Auxiliary Pane": "切换最大化辅助面板",
+    "Toggle Maximize Side Panel": "切换最大化侧边栏",
     "Toggle Model Selector": "切换模型选择器",
     "Toggle Overview Panel": "切换概览面板",
     "Toggle Project Selector": "切换项目选择器",
+    "Toggle Side Panel": "切换侧边栏",
     "Toggle Sidebar": "切换侧边栏",
     "Toggle Terminal": "切换终端",
     "Toggle Visibility": "切换显示/隐藏",
@@ -1125,6 +1191,7 @@ DOM_JS = r"""
     "Undo": "撤销",
     "Undo changes": "撤销更改",
     "Undo changes up to this point": "撤销更改至此处",
+    "Undo restores your entire workspace to its state at this point.": "撤销会将整个工作区恢复到此时的状态。",
     "Unstage change": "取消暂存更改",
     "Untracked (Unstaged)": "未跟踪 (未暂存)",
     "Up to date": "已是最新版本",
@@ -1142,6 +1209,7 @@ DOM_JS = r"""
     "Use Add MCP to browse the store, or add a custom server via the MCP config": "使用“添加 MCP”浏览商店，或通过 MCP 配置添加自定义服务器",
     "Use Add MCP to browse the store, or add a custom server via the MCP config.": "使用“添加 MCP”浏览商店，或通过 MCP 配置添加自定义服务器。",
     "Use Add MCP to browse the store.": "使用“添加 MCP”浏览商店。",
+    "Use Antigravity through your Gemini subscription.": "通过 Gemini 订阅使用 Antigravity。",
     "Use full Git clones for Best of N": "在 Best of N 中使用完整 Git 克隆",
     "Use full VCS clones for Best of N": "在 Best of N 中使用完整 VCS 克隆",
     "Use theme to be imported with settings": "使用随设置导入的主题",
@@ -1150,6 +1218,7 @@ DOM_JS = r"""
     "User cancelled agent execution.": "用户取消了智能体执行。",
     "Using the Antigravity Python SDK to build AI agents": "使用 Antigravity Python SDK 构建 AI 智能体",
     "Validation timed out.": "验证超时。",
+    "Verbose": "详细",
     "Verbose Agent Chat": "详细的智能体对话",
     "Verification required": "需要验证",
     "Version": "版本",
@@ -1160,6 +1229,7 @@ DOM_JS = r"""
     "Viewed": "已查看",
     "Visit Legal Help to ask for content changes for legal reasons": "访问法律帮助以出于法律原因请求更改内容",
     "Visit Legal Help to ask for content changes for legal reasons.": "访问法律帮助以出于法律原因请求更改内容。",
+    "Voice mode": "语音模式",
     "We'd love to hear from you.": "我们期待您的反馈。",
     "Web (desktop)": "Web (桌面端)",
     "Web (desktop, remote control)": "Web (桌面端，远程控制)",
@@ -1808,7 +1878,7 @@ MENU_JS = r"""// Antigravity zh-CN menu translator
   if (globalThis.__antigravityZhMenu) return;
   globalThis.__antigravityZhMenu = true;
 
-  var menuTranslationMap = {"About Antigravity": "关于 Antigravity", "Actual Size": "实际大小", "Add inline comment": "添加行内评论", "Add to Chat": "添加到对话", "Add to Chat/Quote": "添加到对话/引用", "Archive": "归档", "Back": "返回", "Check for Updates": "检查更新", "Checking for Updates...": "正在检查更新...", "Close": "关闭", "Close Other Tabs": "关闭其他标签页", "Close Tab": "关闭标签页", "Close Tabs to the Right": "关闭右侧标签页", "Close Window": "关闭窗口", "Collapse All": "全部折叠", "Command Palette": "命令面板", "Connect to WSL": "连接到 WSL", "Copy": "复制", "Copy Content": "复制内容", "Copy File Path": "复制文件路径", "Copy Image": "复制图片", "Copy Image Address": "复制图片地址", "Copy Link": "复制链接", "Copy Path": "复制路径", "Copy Project ID": "复制项目 ID", "Copy Project Name": "复制项目名称", "Copy Relative Path": "复制相对路径", "Cut": "剪切", "Delete": "删除", "Delete Project": "删除项目", "Docs": "文档", "Documentation": "文档", "Download": "下载", "Downloading Update...": "正在下载更新...", "Edit": "编辑", "Expand All": "全部展开", "Extensions": "扩展", "File": "文件", "Find in Pane": "在面板中查找", "Force Reload": "强制重新加载", "Forward": "前进", "Help": "帮助", "Hide Antigravity": "隐藏 Antigravity", "Hide Others": "隐藏其他", "Inspect Element": "检查元素", "Keyboard Shortcuts": "键盘快捷键", "Mark as Read": "标记为已读", "Mark as Unread": "标记为未读", "Maximize": "最大化", "Minimize": "最小化", "Move to New Window": "移动到新窗口", "New Conversation": "新建对话", "New File": "新建文件", "New Folder": "新建文件夹", "New Window": "新建窗口", "Open": "打开", "Open Containing Folder": "打开所在文件夹", "Open Link in New Tab": "在新标签页中打开链接", "Open Settings": "打开设置", "Open in Integrated Terminal": "在集成终端中打开", "Open in New Window": "在新窗口中打开", "Paste": "粘贴", "Pin": "置顶", "Project Settings": "项目设置", "Quit": "退出", "Quit Antigravity": "退出 Antigravity", "Redo": "重做", "Refresh": "刷新", "Relaunch in WSL": "在 WSL 中重新启动", "Reload": "重新加载", "Rename": "重命名", "Reopen Locally": "在本地重新打开", "Replace With New": "替换为新建", "Report Issue": "报告问题", "Reset Zoom": "重置缩放", "Restart to Update": "重启以应用更新", "Reveal in Explorer": "在资源管理器中显示", "Reveal in File Explorer": "在文件资源管理器中显示", "Save As": "另存为", "Select All": "全选", "Send Feedback": "发送反馈", "Services": "服务", "Settings": "设置", "Show All": "显示全部", "Show Antigravity": "显示 Antigravity", "Show in File Explorer": "在文件资源管理器中显示", "Show in Folder": "在文件夹中显示", "Split": "分屏", "Split Down": "向下分屏", "Split Right": "向右分屏", "Toggle Developer Tools": "切换开发者工具", "Toggle Full Screen": "切换全屏", "Toggle Maximize Auxiliary Pane": "切换最大化辅助面板", "Toggle Overview Panel": "切换概览面板", "Toggle Terminal": "切换终端", "Undo": "撤销", "Unpin": "取消置顶", "View": "视图", "Window": "窗口", "Zoom In": "放大", "Zoom Out": "缩小"};
+  var menuTranslationMap = {"About Antigravity": "关于 Antigravity", "Actual Size": "实际大小", "Add inline comment": "添加行内评论", "Add to Chat": "添加到对话", "Add to Chat/Quote": "添加到对话/引用", "Archive": "归档", "Archive This Conversation": "归档此对话", "Back": "返回", "Check for Updates": "检查更新", "Checking for Updates...": "正在检查更新...", "Close": "关闭", "Close Other Tabs": "关闭其他标签页", "Close Tab": "关闭标签页", "Close Tabs to the Right": "关闭右侧标签页", "Close Window": "关闭窗口", "Collapse All": "全部折叠", "Command Palette": "命令面板", "Connect to WSL": "连接到 WSL", "Copy": "复制", "Copy Content": "复制内容", "Copy File Path": "复制文件路径", "Copy Image": "复制图片", "Copy Image Address": "复制图片地址", "Copy Link": "复制链接", "Copy Path": "复制路径", "Copy Project ID": "复制项目 ID", "Copy Project Name": "复制项目名称", "Copy Relative Path": "复制相对路径", "Cut": "剪切", "Delete": "删除", "Delete Project": "删除项目", "Docs": "文档", "Documentation": "文档", "Download": "下载", "Downloading Update...": "正在下载更新...", "Edit": "编辑", "Expand All": "全部展开", "Extensions": "扩展", "File": "文件", "Find in Pane": "在面板中查找", "Force Reload": "强制重新加载", "Forward": "前进", "Give Feedback": "提供反馈", "Help": "帮助", "Hide Antigravity": "隐藏 Antigravity", "Hide Others": "隐藏其他", "Inspect Element": "检查元素", "Keyboard Shortcuts": "键盘快捷键", "Mark as Read": "标记为已读", "Mark as Unread": "标记为未读", "Maximize": "最大化", "Minimize": "最小化", "Move Conversation Down": "下移对话", "Move Conversation Up": "上移对话", "Move to New Window": "移动到新窗口", "New Conversation": "新建对话", "New File": "新建文件", "New Folder": "新建文件夹", "New Tab": "新建标签页", "New Window": "新建窗口", "Next Side Panel Tab": "下一个侧边栏标签", "Open": "打开", "Open Containing Folder": "打开所在文件夹", "Open Link in New Tab": "在新标签页中打开链接", "Open Settings": "打开设置", "Open in Integrated Terminal": "在集成终端中打开", "Open in New Window": "在新窗口中打开", "Paste": "粘贴", "Pin": "置顶", "Previous Side Panel Tab": "上一个侧边栏标签", "Project Settings": "项目设置", "Quit": "退出", "Quit Antigravity": "退出 Antigravity", "Redo": "重做", "Refresh": "刷新", "Relaunch in WSL": "在 WSL 中重新启动", "Reload": "重新加载", "Rename": "重命名", "Reopen Closed Tab": "重新打开已关闭的标签页", "Reopen Locally": "在本地重新打开", "Replace With New": "替换为新建", "Report Issue": "报告问题", "Reset Zoom": "重置缩放", "Restart to Update": "重启以应用更新", "Reveal in Explorer": "在资源管理器中显示", "Reveal in File Explorer": "在文件资源管理器中显示", "Save As": "另存为", "Select All": "全选", "Send Feedback": "发送反馈", "Services": "服务", "Settings": "设置", "Show All": "显示全部", "Show Antigravity": "显示 Antigravity", "Show in File Explorer": "在文件资源管理器中显示", "Show in Folder": "在文件夹中显示", "Split": "分屏", "Split Down": "向下分屏", "Split Right": "向右分屏", "Toggle Developer Tools": "切换开发者工具", "Toggle Full Screen": "切换全屏", "Toggle Maximize Auxiliary Pane": "切换最大化辅助面板", "Toggle Maximize Side Panel": "切换最大化侧边栏", "Toggle Overview Panel": "切换概览面板", "Toggle Side Panel": "切换侧边栏", "Toggle Terminal": "切换终端", "Undo": "撤销", "Unpin": "取消置顶", "View": "视图", "Window": "窗口", "Zoom In": "放大", "Zoom Out": "缩小"};
 
   function tr(value) {
     if (typeof value !== 'string' || !value) return value;
@@ -1870,7 +1940,87 @@ MENU_JS = r"""// Antigravity zh-CN menu translator
 """
 
 
+def _clean_install_value(value):
+    text = str(value).strip()
+    if not text:
+        return ""
+    if "," in text and text.lower().endswith((",0", ",1")):
+        text = text.rsplit(",", 1)[0]
+    if text.startswith('"'):
+        end = text.find('"', 1)
+        if end != -1:
+            text = text[1:end]
+    elif " /" in text:
+        text = text.split(" /", 1)[0]
+    text = text.strip().strip('"')
+    if os.path.isfile(text):
+        return os.path.dirname(text)
+    if os.path.isdir(text):
+        return text
+    return ""
+
+
+def find_install_root():
+    local = os.environ.get("LOCALAPPDATA") or ""
+    program_files = os.environ.get("ProgramFiles") or ""
+    program_files_x86 = os.environ.get("ProgramFiles(x86)") or ""
+    candidates = []
+    for base in (
+        os.path.join(local, "Programs", "antigravity") if local else "",
+        os.path.join(program_files, "Antigravity") if program_files else "",
+        os.path.join(program_files_x86, "Antigravity") if program_files_x86 else "",
+        os.path.join(local, "Programs", "Antigravity") if local else "",
+    ):
+        if base:
+            candidates.append(base)
+    if os.name == "nt":
+        try:
+            import winreg
+            keys = [
+                (winreg.HKEY_CURRENT_USER, r"Software\Microsoft\Windows\CurrentVersion\Uninstall"),
+                (winreg.HKEY_LOCAL_MACHINE, r"Software\Microsoft\Windows\CurrentVersion\Uninstall"),
+                (winreg.HKEY_LOCAL_MACHINE, r"Software\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall"),
+            ]
+            for hive, path in keys:
+                try:
+                    with winreg.OpenKey(hive, path) as root:
+                        for i in range(winreg.QueryInfoKey(root)[0]):
+                            try:
+                                name = winreg.EnumKey(root, i)
+                                with winreg.OpenKey(root, name) as sub:
+                                    try:
+                                        display, _ = winreg.QueryValueEx(sub, "DisplayName")
+                                    except OSError:
+                                        continue
+                                    if "antigravity" not in str(display).lower():
+                                        continue
+                                    for value in ("InstallLocation", "DisplayIcon", "UninstallString"):
+                                        try:
+                                            raw, _ = winreg.QueryValueEx(sub, value)
+                                        except OSError:
+                                            continue
+                                        candidate = _clean_install_value(raw)
+                                        if candidate:
+                                            candidates.append(candidate)
+                            except OSError:
+                                continue
+                except OSError:
+                    continue
+        except ImportError:
+            pass
+    for candidate in candidates:
+        if candidate and os.path.isdir(os.path.join(candidate, "resources")):
+            return candidate
+    for candidate in candidates:
+        if candidate and os.path.isfile(os.path.join(candidate, "Antigravity.exe")):
+            return candidate
+    return None
+
+
 def default_dist():
+    root = find_install_root()
+    if root:
+        return os.path.join(root, "resources", "app", "dist")
     local = os.environ.get("LOCALAPPDATA") or os.path.expanduser("~")
     return os.path.join(local, "Programs", "antigravity", "resources", "app", "dist")
 
@@ -2051,11 +2201,18 @@ def main():
     parser.add_argument("--update", action="store_true", help="re-extract app.asar after an Antigravity update")
     parser.add_argument("--restore", action="store_true", help="remove injected translation blocks")
     parser.add_argument("--dry-run", action="store_true", help="show actions without writing")
+    parser.add_argument("--print-dist", action="store_true", help="print the detected dist path and exit")
     args = parser.parse_args()
+
+    if args.print_dist:
+        print(args.dist)
+        return 0
 
     if args.restore and args.update:
         print("[error] --restore and --update cannot be combined")
         return 2
+
+    print(f"[info] dist: {args.dist}")
 
     if args.update:
         if not refresh_app(args.dist, args.dry_run):

@@ -1831,6 +1831,25 @@ DOM_JS = r"""
     "否 conversations yet": "暂无对话"
   };
 
+  var CONSERVATIVE = true;
+
+  function normalizeText(value) {
+    return (value || "").replace(/\s+/g, " ").trim();
+  }
+
+  function shouldSkipSubtree(el) {
+    if (!CONSERVATIVE || !el || !el.textContent) return false;
+    var full = normalizeText(el.textContent);
+    if (full.length < 12 || full.length > 300) return false;
+    if (!/[.!?]$/.test(full)) return false;
+    if (dictionary[full]) return false;
+    var tag = el.tagName;
+    if (tag !== "P" && tag !== "DIV" && tag !== "SPAN" && tag !== "LI" && tag !== "LABEL" && tag !== "TD") return false;
+    if (el.children && el.children.length > 8) return false;
+    if (el.querySelector && el.querySelector("button, input, select, textarea, [role=\"button\"]")) return false;
+    return true;
+  }
+
   function translateAttrs(el) {
     if (!el || !el.getAttribute) return;
     for (var i = 0; i < ATTRS.length; i++) {
@@ -1851,9 +1870,12 @@ DOM_JS = r"""
     if (node.nodeType === Node.TEXT_NODE) {
       var parent = node.parentElement;
       if (parent) {
-        var full = (parent.textContent || "").replace(/\s+/g, " ").trim();
+        var full = normalizeText(parent.textContent);
         if (EMPTY_STATES[full]) {
           parent.textContent = EMPTY_STATES[full];
+          return;
+        }
+        if (CONSERVATIVE && full !== normalizeText(node.textContent) && /[.!?]$/.test(full)) {
           return;
         }
       }
@@ -1868,6 +1890,7 @@ DOM_JS = r"""
     if (tag === "SCRIPT" || tag === "STYLE" || tag === "NOSCRIPT" || tag === "TEMPLATE") return;
     translateAttrs(node);
     if (isProtected(node)) return;
+    if (shouldSkipSubtree(node)) return;
     if (tag === "SVG" || tag === "CANVAS") return;
     var children = Array.from(node.childNodes);
     for (var i = 0; i < children.length; i++) processNode(children[i]);

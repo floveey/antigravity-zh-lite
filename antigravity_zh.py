@@ -1837,6 +1837,17 @@ DOM_JS = r"""
     return (value || "").replace(/\s+/g, " ").trim();
   }
 
+  function hasBlockChild(el) {
+    if (!el || !el.children) return false;
+    for (var i = 0; i < el.children.length; i++) {
+      var t = el.children[i].tagName;
+      if (t === "P" || t === "DIV" || t === "LI" || t === "UL" || t === "OL" ||
+          t === "SECTION" || t === "ARTICLE" || t === "HEADER" || t === "FOOTER" ||
+          t === "TABLE" || t === "TR" || t === "TD") return true;
+    }
+    return false;
+  }
+
   function shouldSkipSubtree(el) {
     if (!CONSERVATIVE || !el || !el.textContent) return false;
     var full = normalizeText(el.textContent);
@@ -1846,6 +1857,7 @@ DOM_JS = r"""
     var tag = el.tagName;
     if (tag !== "P" && tag !== "DIV" && tag !== "SPAN" && tag !== "LI" && tag !== "LABEL" && tag !== "TD") return false;
     if (el.children && el.children.length > 8) return false;
+    if (hasBlockChild(el)) return false;
     if (el.querySelector && el.querySelector("button, input, select, textarea, [role=\"button\"]")) return false;
     return true;
   }

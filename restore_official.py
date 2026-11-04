@@ -17,7 +17,87 @@ import subprocess
 import sys
 
 
+def _clean_install_value(value):
+    text = str(value).strip()
+    if not text:
+        return ""
+    if "," in text and text.lower().endswith((",0", ",1")):
+        text = text.rsplit(",", 1)[0]
+    if text.startswith('"'):
+        end = text.find('"', 1)
+        if end != -1:
+            text = text[1:end]
+    elif " /" in text:
+        text = text.split(" /", 1)[0]
+    text = text.strip().strip('"')
+    if os.path.isfile(text):
+        return os.path.dirname(text)
+    if os.path.isdir(text):
+        return text
+    return ""
+
+
+def find_install_root():
+    local = os.environ.get("LOCALAPPDATA") or ""
+    program_files = os.environ.get("ProgramFiles") or ""
+    program_files_x86 = os.environ.get("ProgramFiles(x86)") or ""
+    candidates = []
+    for base in (
+        os.path.join(local, "Programs", "antigravity") if local else "",
+        os.path.join(program_files, "Antigravity") if program_files else "",
+        os.path.join(program_files_x86, "Antigravity") if program_files_x86 else "",
+        os.path.join(local, "Programs", "Antigravity") if local else "",
+    ):
+        if base:
+            candidates.append(base)
+    if os.name == "nt":
+        try:
+            import winreg
+            keys = [
+                (winreg.HKEY_CURRENT_USER, r"Software\Microsoft\Windows\CurrentVersion\Uninstall"),
+                (winreg.HKEY_LOCAL_MACHINE, r"Software\Microsoft\Windows\CurrentVersion\Uninstall"),
+                (winreg.HKEY_LOCAL_MACHINE, r"Software\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall"),
+            ]
+            for hive, path in keys:
+                try:
+                    with winreg.OpenKey(hive, path) as root:
+                        for i in range(winreg.QueryInfoKey(root)[0]):
+                            try:
+                                name = winreg.EnumKey(root, i)
+                                with winreg.OpenKey(root, name) as sub:
+                                    try:
+                                        display, _ = winreg.QueryValueEx(sub, "DisplayName")
+                                    except OSError:
+                                        continue
+                                    if "antigravity" not in str(display).lower():
+                                        continue
+                                    for value in ("InstallLocation", "DisplayIcon", "UninstallString"):
+                                        try:
+                                            raw, _ = winreg.QueryValueEx(sub, value)
+                                        except OSError:
+                                            continue
+                                        candidate = _clean_install_value(raw)
+                                        if candidate:
+                                            candidates.append(candidate)
+                            except OSError:
+                                continue
+                except OSError:
+                    continue
+        except ImportError:
+            pass
+    for candidate in candidates:
+        if candidate and os.path.isdir(os.path.join(candidate, "resources")):
+            return candidate
+    for candidate in candidates:
+        if candidate and os.path.isfile(os.path.join(candidate, "Antigravity.exe")):
+            return candidate
+    return None
+
+
 def default_dist():
+    root = find_install_root()
+    if root:
+        return os.path.join(root, "resources", "app", "dist")
     local = os.environ.get("LOCALAPPDATA") or os.path.expanduser("~")
     return os.path.join(local, "Programs", "antigravity", "resources", "app", "dist")
 
@@ -39,7 +119,12 @@ def main():
     parser = argparse.ArgumentParser(description="Restore official Antigravity files")
     parser.add_argument("--dist", default=default_dist(), help="path to resources/app/dist")
     parser.add_argument("--dry-run", action="store_true", help="show actions without changing files")
+    parser.add_argument("--print-dist", action="store_true", help="print the detected dist path and exit")
     args = parser.parse_args()
+
+    if args.print_dist:
+        print(args.dist)
+        return 0
 
     app_dir = os.path.dirname(args.dist)
     resources = os.path.dirname(app_dir)

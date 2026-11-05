@@ -207,6 +207,7 @@ DOM_JS = r"""
     "Cancel": "取消",
     "Cancel All Tasks": "取消所有任务",
     "Cannot parse folder URI.": "无法解析文件夹 URI。",
+    "Change": "更改",
     "Change...": "更改...",
     "Changes": "更改",
     "Change…": "更改…",
@@ -267,6 +268,7 @@ DOM_JS = r"""
     "Configure allowed terminal commands.": "配置允许执行的终端命令。",
     "Configure default behaviors, skills, and MCP servers.": "配置默认行为、技能和 MCP 服务器。",
     "Configure external tools via Model Context Protocol.": "通过模型上下文协议配置外部工具。",
+    "Configure global allowed and denied resource permissions": "配置全局允许和拒绝的资源权限",
     "Configure global allowed and denied resource permissions.": "配置全局允许和拒绝的资源权限。",
     "Configure hooks that run on agent lifecycle events.": "配置在智能体生命周期事件中触发的钩子。",
     "Configure keyboard shortcuts.": "配置键盘快捷键。",
@@ -732,6 +734,7 @@ DOM_JS = r"""
     "Models & Usage": "模型与用量",
     "Modern Web Guidance": "现代 Web 开发指南",
     "Modified": "已修改",
+    "Modified in": "修改于",
     "Modify permissions for file and terminal tools.": "修改文件和终端工具的权限。",
     "Modify permissions for file, terminal, and MCP tools": "修改文件、终端和 MCP 工具的权限",
     "Modify permissions for file, terminal, and MCP tools.": "修改文件、终端和 MCP 工具的权限。",
@@ -803,6 +806,7 @@ DOM_JS = r"""
     "Not Signed In": "未登录",
     "Not found": "未找到",
     "Not in Project": "未分组项目",
+    "Not set": "未设置",
     "Notice": "提示",
     "Notification Preferences": "通知偏好设置",
     "Notification Settings": "通知设置",
@@ -1063,6 +1067,7 @@ DOM_JS = r"""
     "Something went wrong!": "出错了！",
     "Sonnet 5.5 is now available on paid Pro and Ultra plans. Third-party model access will no longer be available on your current plan starting on November 2, 2026.": "Sonnet 5.5 现已在付费的 Pro 和 Ultra 方案中提供。从 2026 年 11 月 2 日起，您当前的方案将不再支持访问第三方模型。",
     "Sort Conversations": "对话排序",
+    "Sound": "声音",
     "Specifies Agent's behavior when asking for review on artifacts, which are documents it creates to enable a richer conversation experience.": "指定智能体在请求审阅产物时的行为。产物是指其为提供更丰富对话体验而创建的各类文档与生成物。",
     "Split": "分屏",
     "Split Conversation Horizontally": "水平拆分对话",
@@ -1243,7 +1248,9 @@ DOM_JS = r"""
     "Viewed": "已查看",
     "Visit Legal Help to ask for content changes for legal reasons": "访问法律帮助以出于法律原因请求更改内容",
     "Visit Legal Help to ask for content changes for legal reasons.": "访问法律帮助以出于法律原因请求更改内容。",
+    "Voice": "语音",
     "Voice mode": "语音模式",
+    "Volume": "音量",
     "We'd love to hear from you.": "我们期待您的反馈。",
     "Web (desktop)": "Web (桌面端)",
     "Web (desktop, remote control)": "Web (桌面端，远程控制)",
@@ -1831,10 +1838,35 @@ DOM_JS = r"""
     "否 conversations yet": "暂无对话"
   };
 
+  var FULL_PHRASES = {
+    "Type / and select plan to have the agent generate a plan.": "输入 / 并选择 plan，让智能体生成计划。"
+  };
+
   var CONSERVATIVE = true;
 
   function normalizeText(value) {
     return (value || "").replace(/\s+/g, " ").trim();
+  }
+
+  function fragmentCoverage(el) {
+    var nodes = [];
+    (function collect(node) {
+      if (!node || !node.childNodes) return;
+      for (var i = 0; i < node.childNodes.length; i++) {
+        var child = node.childNodes[i];
+        if (child.nodeType === Node.TEXT_NODE) nodes.push(child);
+        else if (child.nodeType === Node.ELEMENT_NODE) collect(child);
+      }
+    })(el);
+    for (var j = 0; j < nodes.length; j++) {
+      var text = nodes[j].textContent;
+      if (!text || !/[A-Za-z]/.test(text)) continue;
+      if (translateText(text) !== text) continue;
+      var parent = nodes[j].parentElement;
+      if (parent && parent.closest && parent.closest("a, code, kbd, samp")) continue;
+      return false;
+    }
+    return true;
   }
 
   function hasBlockChild(el) {
@@ -1859,7 +1891,7 @@ DOM_JS = r"""
     if (el.children && el.children.length > 8) return false;
     if (hasBlockChild(el)) return false;
     if (el.querySelector && el.querySelector("button, input, select, textarea, [role=\"button\"]")) return false;
-    return true;
+    return !fragmentCoverage(el);
   }
 
   function translateAttrs(el) {
@@ -1888,7 +1920,9 @@ DOM_JS = r"""
           return;
         }
         if (CONSERVATIVE && full !== normalizeText(node.textContent) && /[.!?]$/.test(full)) {
-          return;
+          if (full.length <= 300 && !hasBlockChild(parent) && !fragmentCoverage(parent)) {
+            return;
+          }
         }
       }
       if (isProtected(parent)) return;
@@ -1902,6 +1936,11 @@ DOM_JS = r"""
     if (tag === "SCRIPT" || tag === "STYLE" || tag === "NOSCRIPT" || tag === "TEMPLATE") return;
     translateAttrs(node);
     if (isProtected(node)) return;
+    var fullPhrase = normalizeText(node.textContent);
+    if (FULL_PHRASES[fullPhrase]) {
+      node.textContent = FULL_PHRASES[fullPhrase];
+      return;
+    }
     if (shouldSkipSubtree(node)) return;
     if (tag === "SVG" || tag === "CANVAS") return;
     var children = Array.from(node.childNodes);

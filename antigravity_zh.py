@@ -41,6 +41,7 @@ DOM_JS = r"""
     "A license or project selection is required to use Antigravity.": "使用 Antigravity 需要许可证或项目选择。",
     "A shell setup script run before every command the agent executes in this project. Overrides the global script.": "在本项目中智能体执行的每条命令前运行的 shell 设置脚本。会覆盖全局脚本。",
     "A shell setup script run before every command the agent executes.": "在智能体执行每条命令前运行的 Shell 初始化脚本。",
+    "Accessibility": "无障碍",
     "API Configuration": "API 配置",
     "API Key": "API 密钥",
     "About": "关于",
@@ -222,6 +223,7 @@ DOM_JS = r"""
     "Changes": "更改",
     "Change…": "更改…",
     "Chat": "对话",
+    "Chat Layout": "对话布局",
     "Chat Settings": "聊天设置",
     "Chat Shortcuts": "对话快捷键",
     "Check for Updates": "检查更新",
@@ -404,6 +406,8 @@ DOM_JS = r"""
     "Default Model": "默认模型",
     "Delete": "删除",
     "Delete All": "全部删除",
+    "Delete All Data": "删除所有数据",
+    "Delete All Remote Agents Data": "删除所有远程智能体数据",
     "Delete All Remote Agents Data?": "删除所有远程智能体数据？",
     "Delete Conversation": "删除对话",
     "Delete Handler": "删除处理器",
@@ -933,6 +937,7 @@ DOM_JS = r"""
     "Paste code here": "在此粘贴代码",
     "Pay only for the tokens you use, billed through Gemini platform.": "仅为使用的 Token 付费，通过 Gemini 平台计费。",
     "Permanently delete": "永久删除",
+    "Permanently delete your remote conversations, projects, scheduled tasks, connected plugins and settings. Data in the desktop app and your Google account are not affected.": "永久删除您的远程对话、项目、计划任务、已连接的插件和设置。桌面应用和 Google 账户中的数据不受影响。",
     "Permission Preset": "权限预设",
     "Permission Settings": "权限设置",
     "Permissions": "权限",
@@ -1017,6 +1022,7 @@ DOM_JS = r"""
     "Reliable automation, in-depth debugging, and performance analysis in Chrome using Chrome DevTools and Puppeteer": "使用 Chrome DevTools 和 Puppeteer 在 Chrome 中实现可靠的自动化、深度调试和性能分析",
     "Reload": "重新加载",
     "Remote": "远程",
+    "Remote Agents Data": "远程智能体数据",
     "Remote Control": "远程控制",
     "Remote Control Issue": "远程控制问题",
     "Remote control issue": "远程控制问题",
@@ -2116,7 +2122,7 @@ MENU_JS = r"""// Antigravity zh-CN menu translator
   if (globalThis.__antigravityZhMenu) return;
   globalThis.__antigravityZhMenu = true;
 
-  var menuTranslationMap = {"About Antigravity": "关于 Antigravity", "Actual Size": "实际大小", "Add inline comment": "添加行内评论", "Add to Chat": "添加到对话", "Add to Chat/Quote": "添加到对话/引用", "Archive": "归档", "Archive This Conversation": "归档此对话", "Ask before sensitive operations.": "敏感操作前询问。", "Auto (Preview)": "自动（预览）", "Automatically decide if commands run.": "自动决定是否运行命令。", "Back": "返回", "Check for Updates": "检查更新", "Checking for Updates...": "正在检查更新...", "Close": "关闭", "Close Other Tabs": "关闭其他标签页", "Close Tab": "关闭标签页", "Close Tabs to the Right": "关闭右侧标签页", "Close Window": "关闭窗口", "Collapse All": "全部折叠", "Command Palette": "命令面板", "Connect to WSL": "连接到 WSL", "Copy": "复制", "Copy Content": "复制内容", "Copy File Path": "复制文件路径", "Copy Image": "复制图片", "Copy Image Address": "复制图片地址", "Copy Link": "复制链接", "Copy Path": "复制路径", "Copy Project ID": "复制项目 ID", "Copy Project Name": "复制项目名称", "Copy Relative Path": "复制相对路径", "Cut": "剪切", "Default": "默认", "Delete": "删除", "Delete Project": "删除项目", "Docs": "文档", "Documentation": "文档", "Download": "下载", "Downloading Update...": "正在下载更新...", "Edit": "编辑", "Every command requires approval.": "每条命令都需要批准。", "Expand All": "全部展开", "Extensions": "扩展", "File": "文件", "Find in Pane": "在面板中查找", "Force Reload": "强制重新加载", "Forward": "前进", "Give Feedback": "提供反馈", "Help": "帮助", "Hide Antigravity": "隐藏 Antigravity", "Hide Others": "隐藏其他", "Inspect Element": "检查元素", "Keyboard Shortcuts": "键盘快捷键", "Mark as Read": "标记为已读", "Mark as Unread": "标记为未读", "Maximize": "最大化", "Minimize": "最小化", "Move Conversation Down": "下移对话", "Move Conversation Up": "上移对话", "Move to New Window": "移动到新窗口", "New Conversation": "新建对话", "New File": "新建文件", "New Folder": "新建文件夹", "New Tab": "新建标签页", "New Window": "新建窗口", "Next Side Panel Tab": "下一个侧边栏标签", "Open": "打开", "Open Containing Folder": "打开所在文件夹", "Open Link in New Tab": "在新标签页中打开链接", "Open Settings": "打开设置", "Open in Integrated Terminal": "在集成终端中打开", "Open in New Window": "在新窗口中打开", "Paste": "粘贴", "Pin": "置顶", "Previous Side Panel Tab": "上一个侧边栏标签", "Project Settings": "项目设置", "Quit": "退出", "Quit Antigravity": "退出 Antigravity", "Redo": "重做", "Refresh": "刷新", "Relaunch in WSL": "在 WSL 中重新启动", "Reload": "重新加载", "Rename": "重命名", "Reopen Closed Tab": "重新打开已关闭的标签页", "Reopen Locally": "在本地重新打开", "Replace With New": "替换为新建", "Report Issue": "报告问题", "Request Review": "请求审阅", "Reset Zoom": "重置缩放", "Restart to Update": "重启以应用更新", "Reveal in Explorer": "在资源管理器中显示", "Reveal in File Explorer": "在文件资源管理器中显示", "Run all commands without restrictions.": "无限制地运行所有命令。", "Save As": "另存为", "Select All": "全选", "Send Feedback": "发送反馈", "Services": "服务", "Settings": "设置", "Show All": "显示全部", "Show Antigravity": "显示 Antigravity", "Show in File Explorer": "在文件资源管理器中显示", "Show in Folder": "在文件夹中显示", "Split": "分屏", "Split Down": "向下分屏", "Split Right": "向右分屏", "Toggle Developer Tools": "切换开发者工具", "Toggle Full Screen": "切换全屏", "Toggle Maximize Auxiliary Pane": "切换最大化辅助面板", "Toggle Maximize Side Panel": "切换最大化侧边栏", "Toggle Overview Panel": "切换概览面板", "Toggle Side Panel": "切换侧边栏", "Toggle Terminal": "切换终端", "Turbo": "极速", "Turbo mode": "极速模式", "Undo": "撤销", "Unpin": "取消置顶", "Use Global": "使用全局设置", "Use global": "使用全局设置", "View": "视图", "Window": "窗口", "Zoom In": "放大", "Zoom Out": "缩小"};
+  var menuTranslationMap = {"About Antigravity": "关于 Antigravity", "Actual Size": "实际大小", "Add inline comment": "添加行内评论", "Add to Chat": "添加到对话", "Add to Chat/Quote": "添加到对话/引用", "Archive": "归档", "Archive This Conversation": "归档此对话", "Ask before sensitive operations.": "敏感操作前询问。", "Auto (Preview)": "自动（预览）", "Automatically decide if commands run.": "自动决定是否运行命令。", "Back": "返回", "Check for Updates": "检查更新", "Checking for Updates...": "正在检查更新...", "Close": "关闭", "Close Other Tabs": "关闭其他标签页", "Close Tab": "关闭标签页", "Close Tabs to the Right": "关闭右侧标签页", "Close Window": "关闭窗口", "Collapse All": "全部折叠", "Command Palette": "命令面板", "Connect to WSL": "连接到 WSL", "Conversation ID": "对话 ID", "Conversation Name": "对话名称", "Project Name": "项目名称", "Copy": "复制", "Copy Content": "复制内容", "Copy File Path": "复制文件路径", "Copy Image": "复制图片", "Copy Image Address": "复制图片地址", "Copy Link": "复制链接", "Copy Path": "复制路径", "Copy Project ID": "复制项目 ID", "Copy Project Name": "复制项目名称", "Copy Relative Path": "复制相对路径", "Cut": "剪切", "Default": "默认", "Delete": "删除", "Delete Project": "删除项目", "Docs": "文档", "Documentation": "文档", "Download": "下载", "Downloading Update...": "正在下载更新...", "Edit": "编辑", "Every command requires approval.": "每条命令都需要批准。", "Expand All": "全部展开", "Extensions": "扩展", "File": "文件", "Find in Pane": "在面板中查找", "Force Reload": "强制重新加载", "Forward": "前进", "Give Feedback": "提供反馈", "Help": "帮助", "Hide Antigravity": "隐藏 Antigravity", "Hide Others": "隐藏其他", "Inspect Element": "检查元素", "Keyboard Shortcuts": "键盘快捷键", "Mark Read": "标记为已读", "Mark Unread": "标记为未读", "Mark as Read": "标记为已读", "Mark as Unread": "标记为未读", "Maximize": "最大化", "Minimize": "最小化", "Move Conversation Down": "下移对话", "Move Conversation Up": "上移对话", "Move to New Window": "移动到新窗口", "New Conversation": "新建对话", "New File": "新建文件", "New Folder": "新建文件夹", "New Tab": "新建标签页", "New Window": "新建窗口", "Next Side Panel Tab": "下一个侧边栏标签", "Open": "打开", "Open Containing Folder": "打开所在文件夹", "Open Link in New Tab": "在新标签页中打开链接", "Open Settings": "打开设置", "Open in Integrated Terminal": "在集成终端中打开", "Open in New Window": "在新窗口中打开", "Paste": "粘贴", "Pin": "置顶", "Previous Side Panel Tab": "上一个侧边栏标签", "Project Settings": "项目设置", "Quit": "退出", "Quit Antigravity": "退出 Antigravity", "Redo": "重做", "Refresh": "刷新", "Relaunch in WSL": "在 WSL 中重新启动", "Reload": "重新加载", "Rename": "重命名", "Reopen Closed Tab": "重新打开已关闭的标签页", "Reopen Locally": "在本地重新打开", "Replace With New": "替换为新建", "Report Issue": "报告问题", "Request Review": "请求审阅", "Reset Zoom": "重置缩放", "Restart to Update": "重启以应用更新", "Reveal in Explorer": "在资源管理器中显示", "Reveal in File Explorer": "在文件资源管理器中显示", "Run all commands without restrictions.": "无限制地运行所有命令。", "Save As": "另存为", "Select All": "全选", "Send Feedback": "发送反馈", "Services": "服务", "Settings": "设置", "Show All": "显示全部", "Show Antigravity": "显示 Antigravity", "Show in File Explorer": "在文件资源管理器中显示", "Show in Folder": "在文件夹中显示", "Split": "分屏", "Split Down": "向下分屏", "Split Right": "向右分屏", "Toggle Developer Tools": "切换开发者工具", "Toggle Full Screen": "切换全屏", "Toggle Maximize Auxiliary Pane": "切换最大化辅助面板", "Toggle Maximize Side Panel": "切换最大化侧边栏", "Toggle Overview Panel": "切换概览面板", "Toggle Side Panel": "切换侧边栏", "Toggle Terminal": "切换终端", "Turbo": "极速", "Turbo mode": "极速模式", "Undo": "撤销", "Unpin": "取消置顶", "Use Global": "使用全局设置", "Use global": "使用全局设置", "View": "视图", "Window": "窗口", "Zoom In": "放大", "Zoom Out": "缩小"};
 
   function tr(value) {
     if (typeof value !== 'string' || !value) return value;

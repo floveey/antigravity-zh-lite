@@ -218,6 +218,7 @@ DOM_JS = r"""
     "Cancel All Tasks": "取消所有任务",
     "Cancel Generation": "取消生成",
     "Cannot parse folder URI.": "无法解析文件夹 URI。",
+    "Carries out the plan: searches, edits, builds, and tests. Pick a faster, cheaper model.": "执行计划：搜索、编辑、构建和测试。请选择更快、更便宜的模型。",
     "Change": "更改",
     "Change...": "更改...",
     "Changes": "更改",
@@ -232,8 +233,10 @@ DOM_JS = r"""
     "Choose between the Default and Project 4K experience.": "在默认体验和 Project 4K 体验之间选择。",
     "Choose how much detail is shown during a conversation.": "选择对话过程中显示多少细节。",
     "Choose the experience that fits how you work.": "选择适合您工作方式的体验。",
+    "Choose the models Orchestrator uses. A larger, smarter orchestrator model with a faster, cheaper executor gives high quality for fewer tokens.": "选择编排器使用的模型。更大更聪明的编排器搭配更快更便宜的执行器，能以更少的 token 获得高质量。",
     "Choose where links open by default when clicked.": "选择点击链接时的默认打开位置。",
     "Choose where terminal sessions appear.": "选择终端会话的显示位置。",
+    "Choose which key sends a message in the chat composer.": "选择在对话输入框中发送消息的按键。",
     "Chrome Binary Path": "Chrome 可执行文件路径",
     "Chrome DevTools": "Chrome 开发者工具",
     "CitC workspace paths are world-readable and permanently snapshotted. Choose a local folder outside CitC.": "CitC 工作区路径对所有人可读且会永久快照。请选择 CitC 之外的本地文件夹。",
@@ -516,6 +519,7 @@ DOM_JS = r"""
     "Execute URLs": "URL 执行",
     "Executed": "已执行",
     "Execution": "执行",
+    "Executor Model": "执行器模型",
     "Expand All Folders": "展开所有文件夹",
     "Expected behavior": "预期行为",
     "Experimental Features": "实验性功能",
@@ -678,6 +682,7 @@ DOM_JS = r"""
     "Inherits your Global Permissions when working in this project.": "在此项目中工作时继承您的全局权限。",
     "Inline Actions": "行内操作",
     "Inline Widget": "行内小部件",
+    "Input Box": "输入框",
     "Input device for voice mode and dictation.": "语音模式和听写使用的输入设备。",
     "Input device for voice mode.": "语音模式的输入设备。",
     "Input required": "需要输入",
@@ -823,6 +828,7 @@ DOM_JS = r"""
     "Navigation": "导航",
     "Network": "网络",
     "Network Access Rules": "网络访问规则",
+    "Network access rules": "网络访问规则",
     "Network Permissions": "网络权限",
     "Network Reads": "网络读取",
     "Never": "从不",
@@ -925,6 +931,8 @@ DOM_JS = r"""
     "Optimize the interface and terminal output for screen readers.": "为屏幕阅读器优化界面和终端输出。",
     "Optional branch or ref used when creating a new Cog workspace (defaults to main if unset).": "创建新 Cog 工作区时使用的可选分支或引用（未设置时默认为 main）。",
     "Options": "选项",
+    "Orchestrator Model": "编排器模型",
+    "Orchestrator Settings": "编排器设置",
     "Organization Allowed Domains (Read-Only)": "组织允许的域名 (只读)",
     "Other (write your answer)": "其他 (填写您的回答)",
     "Our servers are experiencing high traffic right now, please try again in a minute.": "我们的服务器当前负载较高，请稍后重试。",
@@ -939,6 +947,7 @@ DOM_JS = r"""
     "Permanently delete": "永久删除",
     "Permanently delete your remote conversations, projects, scheduled tasks, connected plugins and settings. Data in the desktop app and your Google account are not affected.": "永久删除您的远程对话、项目、计划任务、已连接的插件和设置。桌面应用和 Google 账户中的数据不受影响。",
     "Permission Preset": "权限预设",
+    "Permission preset": "权限预设",
     "Permission Settings": "权限设置",
     "Permissions": "权限",
     "Pin": "置顶",
@@ -948,6 +957,7 @@ DOM_JS = r"""
     "Plan": "订阅计划",
     "Plan Review Policy": "计划审阅策略",
     "Planning...": "计划中...",
+    "Plans the work, makes design decisions, and reviews the result. Pick a top-tier model. You can also pick one per conversation from the Orchestrator row in the model menu.": "负责规划工作、做出设计决策并审查结果。请选择顶级模型。你也可以在模型菜单的“编排器”一行中为单个对话单独选择。",
     "Play a sound when your action is needed or the agent finishes.": "需要您操作或智能体完成时播放声音。",
     "Please describe the issue in detail. The more actionable your feedback, the quicker our team can address your request. Some helpful information includes:": "请详细描述您的问题。您的反馈越具体，我们的团队就能越快处理您的请求。一些有用的信息包括：",
     "Please fill out all required values to continue.": "请填写所有必填值以继续。",
@@ -993,6 +1003,7 @@ DOM_JS = r"""
     "Queue": "排队",
     "Queue until after the current turn.": "排队至当前轮次结束后。",
     "Queued Messages": "排队消息",
+    "Queued messages": "排队消息",
     "Quick Start": "快速开始",
     "Quota": "配额",
     "Quote Selection": "引用所选文本",
@@ -1141,6 +1152,7 @@ DOM_JS = r"""
     "Services this plugin connects to on your behalf. Credentials stay on this machine and are only sent to the domains listed.": "此插件代表您连接的服务。凭据仅保存在本机，且只发送到列出的域名。",
     "Set the volume of agent sounds.": "设置智能体音效的音量。",
     "Settings": "设置",
+    "Settings for conversations outside of projects.": "项目之外对话的设置。",
     "Setup": "设置",
     "Setup script failed.": "设置脚本失败。",
     "Setup script ran successfully.": "设置脚本运行成功。",
@@ -1784,6 +1796,9 @@ DOM_JS = r"""
     }
     if ((m = trimmed.match(/^Show (\d+) breakdowns?$/))) {
       return text.replace(trimmed, "显示 " + m[1] + " 项明细");
+    }
+    if ((m = trimmed.match(/^(.+) Weekly Limit$/))) {
+      return text.replace(trimmed, m[1] + " 每周限额");
     }
     if ((m = trimmed.match(/^Explored (\d+) files? >$/))) {
       return text.replace(trimmed, "已浏览 " + m[1] + " 个文件 >");

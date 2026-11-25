@@ -1778,6 +1778,15 @@ DOM_JS = r"""
   ];
   textPrefixRules.sort(function(a, b) { return b[0].length - a[0].length; });
 
+  // Case-insensitive index. Google's UI copy flips between "Download Location"
+  // and "Download location" across releases; exact-key matching silently broke
+  // every entry whose casing changed. Keys are lowercased once at startup.
+  var dictLower = {};
+  for (var dictKey in dictionary) {
+    var dictKeyLower = dictKey.toLowerCase();
+    if (!(dictKeyLower in dictLower)) dictLower[dictKeyLower] = dictionary[dictKey];
+  }
+
   function translateText(text) {
     if (!text || typeof text !== 'string') return text;
     let trimmed = text.trim();
@@ -1786,7 +1795,13 @@ DOM_JS = r"""
     if (dictionary[trimmed]) {
       return text.replace(trimmed, dictionary[trimmed]);
     }
-    
+
+    // Same lookup ignoring case, so "Enable telemetry" still hits "Enable Telemetry".
+    let trimmedLower = trimmed.toLowerCase();
+    if (dictLower[trimmedLower]) {
+      return text.replace(trimmed, dictLower[trimmedLower]);
+    }
+
     // Dynamic Regex Translations
     let m;
     if (text.indexOf("of the customization budget is available") !== -1) {
@@ -2037,7 +2052,7 @@ DOM_JS = r"""
     var full = normalizeText(el.textContent);
     if (full.length < 12 || full.length > 300) return false;
     if (!/[.!?]$/.test(full)) return false;
-    if (dictionary[full]) return false;
+    if (dictionary[full] || dictLower[full.toLowerCase()]) return false;
     var tag = el.tagName;
     if (tag !== "P" && tag !== "DIV" && tag !== "SPAN" && tag !== "LI" && tag !== "LABEL" && tag !== "TD") return false;
     if (el.children && el.children.length > 8) return false;

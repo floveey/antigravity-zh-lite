@@ -85,7 +85,7 @@ python antigravity_zh.py --update
 2. 把原 `app.asar` 改名为 `app.asar.disabled`，让 Electron 加载解包目录
 3. 在 `dist/preload.js` 末尾追加 DOM 翻译器
 4. 在 `dist/menu.js` 末尾追加原生菜单翻译 hook
-5. 翻译器只匹配精确词条和少量固定正则，不翻译任意英文句子
+5. 翻译器只匹配精确词条（大小写不敏感）和少量固定正则，不翻译任意英文句子
 
 ## 已知限制
 
